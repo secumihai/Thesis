@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Data" uuid="15da82fa-a030-4b81-b07b-fab738890f2e">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:D:\RaportEDXRF\Data</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="f66d9ef7-c958-472e-adf6-aea1ba8bb9b7">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/RaportEDXRF/src/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:Data;create=true</jdbc-url>
+    </data-source>
+  </component>
+</project>

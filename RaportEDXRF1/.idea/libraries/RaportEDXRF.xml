@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RaportEDXRF">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/RaportEDXRF_jar/RaportEDXRF.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

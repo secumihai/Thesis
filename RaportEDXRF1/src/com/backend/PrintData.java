@@ -5,9 +5,7 @@ import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.util.Units;
 import org.apache.poi.xwpf.usermodel.*;
 import java.io.*;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 import static java.awt.BorderLayout.CENTER;
 
@@ -220,6 +218,42 @@ public class PrintData{
             counterTable++;
         }
 
+        //Dates for concluzion
+
+        String types []={"Argint","Aur","Platina","Paladiu"};
+        String typ;
+        List<String> conclusion;
+        for (int k=0;k<types.length;k++) {
+            switch (types[k]) {
+                case ("Argint"):
+                    conclusion = looping(nameData, listOfMapData, "Argint");
+                    if(conclusion.size()>0) {
+                        System.out.println(conclusion + " pe bază de argint");
+                    }
+                    break;
+                case ("Aur"):
+                    conclusion = looping(nameData, listOfMapData, "Aur");
+                    if(conclusion.size()>0) {
+                        System.out.println(conclusion + " pe bază de aur");
+                    }
+                    break;
+                case ("Platina"):
+                    conclusion = looping(nameData, listOfMapData, "Platina");
+                    if(conclusion.size()>0) {
+                        System.out.println(conclusion + " pe bază de Platina");
+                    }
+                    break;
+
+            }
+        }
+
+
+
+
+
+//        for (Map<Double,String> lista:listOfMapData) {
+//            System.out.println("Datele de la "+ lista);
+//        }
 
 
         FileOutputStream outStream = new FileOutputStream(pathSave);
@@ -228,5 +262,25 @@ public class PrintData{
         doc.close();
 
     }
+
+    public List <String> looping(List <String> nameData, List<Map<Double, String>> listOfMapData, String type){
+        List <String> str = new ArrayList<>();
+        for (int i=0;i<nameData.size();i++){
+            String[] lines = nameData.get(i).split("\n");
+//                System.out.println("Numele " + lines[0]);
+//                System.out.println("Datele de la "+ listOfMapData.get(i));
+            for (Map.Entry<Double, String> pair : listOfMapData.get(i).entrySet()) {
+                Double value = pair.getKey();
+                String element = pair.getValue();
+                if(element.contains(type)){
+                   if(value>=33.00){
+                       str.add(lines[0]);
+                   }
+                }
+            }
+        }
+        return str;
+    }
+
 
 }
